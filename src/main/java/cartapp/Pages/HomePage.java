@@ -39,7 +39,8 @@ public class HomePage extends BasePageObject{
     }
 
     public WebElement getMacbookAirImage() {
-         return find(macBookAirImageLocator);
+          waitForVisibilityOf(macBookAirImageLocator);
+          return find(macBookAirImageLocator);
     }
 
     public WebElement getIphone6Image() {

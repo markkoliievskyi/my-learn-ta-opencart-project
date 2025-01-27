@@ -37,4 +37,32 @@ public class HomePageTests extends TestUtillities {
         Assert.assertTrue(contactUsPageUrl.equals(expectedContactUsPageUrl),"Actual Page URL: " + contactUsPageUrl + " doesn't match expected URL: " + expectedContactUsPageUrl);
 
     }
+
+    @Test
+    public void macbookImageDisplayedInTopCarousel() {
+
+        //open start page
+        HomePage homePage = new HomePage(driver,log);
+        homePage.openPage();
+
+        //Check Carousel for Macbook image
+        homePage.getMacbookAirImage();
+        //Verify Image is correct
+
+        Assert.assertTrue(homePage.getMacbookAirImage().isDisplayed(), "Image is not displayed");
+    }
+
+    @Test
+    public void iphoneImageDisplayedInTopCarousel() {
+
+        //open start page
+        HomePage homePage = new HomePage(driver,log);
+        homePage.openPage();
+
+        //Check Carousel for Macbook image
+        homePage.getIphone6Image();
+        //Verify Image is correct
+
+        Assert.assertTrue(homePage.getIphone6Image().isDisplayed(), "Image is not displayed");
+    }
 }
