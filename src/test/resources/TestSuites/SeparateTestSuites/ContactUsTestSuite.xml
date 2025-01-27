@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="ContactUsTestSuite" verbose="1">
+    <test name="successfulSendRequestForContact_test">
+        <parameter name="yourName" value="Mark"/>
+        <parameter name="email" value="mark@gmail.com"/>
+        <parameter name="enquiry" value="TEST DESCRIPTION 12345"/>
+        <classes>
+            <class name="com.opencart.demo.ContactUsPageTests.ContactUsPageTests">
+                <methods>
+                    <include name="successfulSendRequestForContact"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="invalidEmailError_test">
+        <classes>
+            <class name="com.opencart.demo.ContactUsPageTests.ContactUsPageTests">
+                <methods>
+                    <include name="invalidEmails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

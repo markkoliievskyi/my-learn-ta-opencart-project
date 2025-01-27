@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="HomePageTestSuite" verbose="1">
+    <test name="openContactPage_test">
+        <classes>
+            <class name="com.opencart.demo.HomePageTests.HomePageTests"/>
+        </classes>
+    </test>
+
+
+</suite>
