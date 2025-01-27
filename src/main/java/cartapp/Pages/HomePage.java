@@ -10,6 +10,7 @@ import java.util.List;
 public class HomePage extends BasePageObject{
 
     private String pageUrl = "https://demo.opencart.com/en-gb?route=common/home";
+
     /**
      * TopHeader section
      */
@@ -20,6 +21,23 @@ public class HomePage extends BasePageObject{
     private By wishlistLocator = By.id("wishlist-total");
     private By shoppingcartLocator = By.xpath("//i[@class='fa-solid fa-cart-shopping']");
     private By checkoutLocator = By.xpath("//i[@class='fa-solid fa-share']");
+    private By addItemSuccessMessage = By.xpath("//div[@class='']");
+    private By shoppingCartDropdownLocator = By.xpath("(//button[@type='button'])[2]");
+    private By macbookLinkLocator = By.xpath("(//a[@href='https://demo.opencart.com/en-gb/product/macbook'])[1]");
+
+
+    public void clickShoppingCartDropdownLocator() {
+        click(shoppingCartDropdownLocator);
+
+    }
+
+    public WebElement getMacbookLink() {
+        return find(macbookLinkLocator);
+    }
+
+    public WebElement getShoppingCartDropdownLocator() {
+        return find(shoppingCartDropdownLocator);
+    }
 
     /**
      *Top Carousel Section
@@ -57,6 +75,16 @@ public class HomePage extends BasePageObject{
         click(iphone6LinkLocator);
     }
 
+    /**
+     *Featured Section
+     */
+    //private By addMacbookToCartLocator = By.xpath("//button[@aria-label='Add to Cart']");
+    private By submitMacbookToCartButton = By.xpath("(//button[@type='submit'])[1]");
+
+    public void clickAddMacbookToCart() {
+        log.info("Clicking on Add to Cart button under Macbook item");
+        find(submitMacbookToCartButton).click();
+    }
 
     //Open Start page with its URL
     public void openPage() {
