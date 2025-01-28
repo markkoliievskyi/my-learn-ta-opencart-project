@@ -3,7 +3,6 @@ package com.opencart.demo.HomePageTests;
 import cartapp.BasePackage.TestUtillities;
 import cartapp.Pages.ContactUsPage;
 import cartapp.Pages.HomePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -84,8 +83,8 @@ public class HomePageTests extends TestUtillities {
 
         // Wait for the Shopping Cart Dropdown to become clickable, then click it
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(homePage.getShoppingCartDropdownLocator()));
-        homePage.clickShoppingCartDropdownLocator();
+        wait.until(ExpectedConditions.elementToBeClickable(homePage.getShoppingCartDropdown()));
+        homePage.clickShoppingCartDropdown();
 
         // Wait for the MacBook link to become visible and verify its text
         WebElement macbookLink = wait.until(ExpectedConditions.visibilityOf(homePage.getMacbookLink()));

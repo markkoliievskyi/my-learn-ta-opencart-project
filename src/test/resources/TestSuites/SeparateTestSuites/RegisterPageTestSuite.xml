@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite name="RegisterPageTestSuite" verbose="1" parallel="tests" thread-count="2">
+
+    <test name="NegativeLoginTest - CH">
+
+        <parameter name="browser"  value="chrome"/>
+
+        <classes>
+            <class name="com.opencart.demo.RegisterPageTests.RegisterPageTests">
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -9,6 +9,10 @@ import java.util.List;
 
 public class HomePage extends BasePageObject{
 
+    public HomePage(WebDriver driver, Logger log) {
+        super(driver, log);
+    }
+
     private String pageUrl = "https://demo.opencart.com/en-gb?route=common/home";
 
     /**
@@ -24,33 +28,32 @@ public class HomePage extends BasePageObject{
     private By addItemSuccessMessage = By.xpath("//div[@class='']");
     private By shoppingCartDropdownLocator = By.xpath("(//button[@type='button'])[2]");
     private By macbookLinkLocator = By.xpath("(//a[@href='https://demo.opencart.com/en-gb/product/macbook'])[1]");
+    private By registerLinkLocator = By.xpath("//a[@href='https://demo.opencart.com/en-gb?route=account/register']");
 
 
-    public void clickShoppingCartDropdownLocator() {
+    public void clickShoppingCartDropdown() {
         click(shoppingCartDropdownLocator);
 
     }
-
     public WebElement getMacbookLink() {
         return find(macbookLinkLocator);
     }
-
-    public WebElement getShoppingCartDropdownLocator() {
+    public WebElement getShoppingCartDropdown() {
         return find(shoppingCartDropdownLocator);
     }
+    public void clickMyAccountLink() {click(myAccountLocator); }
+
+
 
     /**
      *Top Carousel Section
      */
     private By carouselItem = By.id("carousel-item");
     private By macBookAirImageLocator = By.xpath("//img[@alt='MacBookAir']");
-    //private By macBookAirLinkLocator = By.xpath();
     private By iphone6LinkLocator = By.xpath("//a[@href='https://demo.opencart.com/index.php?route=product/product&path=57&product_id=49']");
     private By iphone6ImageLocator = By.xpath("//img[@alt='iPhone 6']");
 
-    public HomePage(WebDriver driver, Logger log) {
-        super(driver, log);
-    }
+
 
     public List<WebElement> getCarouselImage() {
         return findAll(carouselItem);
@@ -106,5 +109,11 @@ public class HomePage extends BasePageObject{
         return new ContactUsPage(driver, log);
     }
 
+    //Open Register Page from HomePage with MyAccount link button
+    public RegisterPage clickRegisterLink() {
+        log.info("Clicking on Register link");
+        click(registerLinkLocator);
+        return new RegisterPage (driver,log);
+    }
 
 }

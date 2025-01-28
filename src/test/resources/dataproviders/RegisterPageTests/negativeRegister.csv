@@ -1,0 +1,4 @@
+no,firstname,lastname,password,expectedMessage,description
+1,,Smith,123456,First Name must be between 1 and 32 characters!,empty firstname
+2,Tom,,123456,Last Name must be between 4 and 20 characters!,empty lastname
+3,Tom,Smith,,Password must be between 4 and 20 characters!,empty password
